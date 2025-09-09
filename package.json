@@ -18,7 +18,7 @@
     "test": "echo \"No tests yet\"",
     "clean": "pnpm -r exec rm -rf dist node_modules",
     "changeset": "changeset",
-    "publish": "changeset publish --access public",
+    "publish": "changeset publish",
     "prepare": "husky"
   },
   "lint-staged": {

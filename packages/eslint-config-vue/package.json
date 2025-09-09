@@ -51,5 +51,9 @@
     "@softonix/eslint-config-rules-stylistic": "workspace:*",
     "@softonix/eslint-config-rules-typescript": "workspace:*",
     "eslint-flat-config-utils": "catalog:dev"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   }
 }

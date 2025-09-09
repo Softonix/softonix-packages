@@ -37,5 +37,9 @@
   "devDependencies": {
     "@types/node": "catalog:dev",
     "eslint": "catalog:dev"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   }
 }

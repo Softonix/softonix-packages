@@ -1,9 +1,11 @@
 import { defineConfig } from 'tsdown'
-import { baseTsdownConfig } from '../../tsdown.config.base'
 
 export default defineConfig({
-  ...baseTsdownConfig,
   entry: './src/index.ts',
+  platform: 'node',
+  dts: true,
+  minify: true,
+  exports: true,
   onSuccess () {
     console.info('✅ ESLint config build succeeded!')
   }

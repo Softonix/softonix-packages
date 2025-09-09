@@ -22,9 +22,9 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,ts,mts,tsx,vue}": [
+    "src/**/*.{js,ts,mts,tsx,vue}": [
       "pnpm -r build",
-      "pnpm -r lint",
+      "pnpm -r lint --",
       "bash -c 'pnpm -r type-check'"
     ]
   },

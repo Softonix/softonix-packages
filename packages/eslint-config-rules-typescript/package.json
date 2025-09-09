@@ -39,5 +39,9 @@
     "@types/node": "catalog:dev",
     "eslint": "catalog:dev",
     "typescript-eslint": "catalog:dev"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   }
 }

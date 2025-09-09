@@ -14,6 +14,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist"
   ],
@@ -32,28 +36,16 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
-    "@stylistic/eslint-plugin": "catalog:dev",
-    "@vue/eslint-config-typescript": "catalog:dev",
-    "eslint": "catalog:dev",
-    "eslint-plugin-vue": "catalog:dev",
-    "typescript-eslint": "catalog:dev"
-  },
-  "devDependencies": {
-    "@stylistic/eslint-plugin": "catalog:dev",
-    "@types/node": "catalog:dev",
-    "@vue/eslint-config-typescript": "catalog:dev",
-    "eslint": "catalog:dev",
-    "eslint-plugin-vue": "catalog:dev",
-    "typescript-eslint": "catalog:dev"
+    "eslint": "catalog:dev"
   },
   "dependencies": {
     "@softonix/eslint-config-rules-base": "workspace:*",
     "@softonix/eslint-config-rules-stylistic": "workspace:*",
     "@softonix/eslint-config-rules-typescript": "workspace:*",
-    "eslint-flat-config-utils": "catalog:dev"
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json"
+    "@stylistic/eslint-plugin": "catalog:dev",
+    "@vue/eslint-config-typescript": "catalog:dev",
+    "eslint-flat-config-utils": "catalog:dev",
+    "eslint-plugin-vue": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
   }
 }

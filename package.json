@@ -6,8 +6,7 @@
   "license": "MIT",
   "author": "Softonix LLC",
   "engines": {
-    "node": ">=22.0.0",
-    "pnpm": ">=9.0.0"
+    "node": "^20.19.0 || >=22.19.0"
   },
   "scripts": {
     "build": "pnpm -r build",
@@ -22,9 +21,10 @@
   },
   "lint-staged": {
     "**/*.{js,ts,mts,tsx,vue}": [
-      "pnpm lint"
-    ],
-    "*.{ts,tsx}": "bash -c 'pnpm type-check'"
+      "pnpm build",
+      "pnpm lint",
+      "pnpm type-check"
+    ]
   },
   "devDependencies": {
     "@changesets/cli": "catalog:dev",

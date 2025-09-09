@@ -4,28 +4,16 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
 
 jobs:
-  lint-typecheck:
-    uses: ./.github/workflows/lint-typecheck.yml
-    strategy:
-      matrix:
-        target: ['lint', 'type-check']
-    with:
-      COMMAND: ${{ matrix.target }}
-
   build:
     uses: ./.github/workflows/build.yml
-    needs: lint-typecheck
 
   changeset-check:
     name: Check Changeset
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
-    needs: [lint-typecheck, build]
+    needs: [build]
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4

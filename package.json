@@ -1,6 +1,5 @@
 {
   "name": "softonix-packages",
-  "private": true,
   "description": "Softonix packages monorepo",
   "type": "module",
   "license": "MIT",

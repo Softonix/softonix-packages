@@ -11,7 +11,7 @@
       "@softonix/eslint-config-vue"
     ]
   ],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []

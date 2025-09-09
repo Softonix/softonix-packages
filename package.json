@@ -23,9 +23,9 @@
   },
   "lint-staged": {
     "**/*.{js,ts,mts,tsx,vue}": [
-      "pnpm build",
-      "pnpm -r --filter '!.' lint",
-      "pnpm type-check"
+      "pnpm -r build",
+      "pnpm -r lint",
+      "bash -c 'pnpm -r type-check'"
     ]
   },
   "devDependencies": {

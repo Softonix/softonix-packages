@@ -1,6 +1,6 @@
 {
   "name": "@softonix/eslint-config-rules-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Base ESLint rules for Softonix packages",
   "type": "module",
   "license": "MIT",

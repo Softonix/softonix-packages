@@ -1,0 +1,26 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "include": [
+    "tsdown.*.ts",
+    "eslint.config.ts",
+    "dts/*",
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@packages/*": [
+        "./packages/*"
+      ]
+    }
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/dist"
+  ]
+}

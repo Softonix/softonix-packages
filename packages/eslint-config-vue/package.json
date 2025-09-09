@@ -1,0 +1,61 @@
+{
+  "name": "@softonix/eslint-config-vue",
+  "version": "0.0.0",
+  "description": "Softonix ESLint configuration",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/softonix/softonix-packages/tree/main/packages/eslint-config-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softonix/softonix-packages.git",
+    "directory": "packages/eslint-config-vue"
+  },
+  "author": "Softonix LLC",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint --fix --cache --max-warnings 0 .",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@stylistic/eslint-plugin": "catalog:dev",
+    "@vue/eslint-config-typescript": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-vue": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "@vue/eslint-config-typescript": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-vue": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
+  },
+  "dependencies": {
+    "@softonix/eslint-config-rules-base": "workspace:*",
+    "@softonix/eslint-config-rules-stylistic": "workspace:*",
+    "@softonix/eslint-config-rules-typescript": "workspace:*",
+    "eslint-flat-config-utils": "catalog:dev"
+  }
+}

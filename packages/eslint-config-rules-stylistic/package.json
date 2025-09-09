@@ -1,0 +1,49 @@
+{
+  "name": "@softonix/eslint-config-rules-stylistic",
+  "version": "0.0.0",
+  "description": "Stylistic ESLint rules for Softonix packages",
+  "type": "module",
+  "license": "MIT",
+  "author": "Softonix LLC",
+  "homepage": "https://github.com/softonix/softonix-packages/tree/main/packages/eslint-config-rules-stylistic#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/softonix/softonix-packages.git",
+    "directory": "packages/eslint-config-rules-stylistic"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint --fix --cache --max-warnings 0 .",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@stylistic/eslint-plugin": "catalog:dev",
+    "eslint": "catalog:dev"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "eslint": "catalog:dev"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [
+    [
+      "@softonix/eslint-config-rules-base",
+      "@softonix/eslint-config-rules-stylistic",
+      "@softonix/eslint-config-rules-typescript",
+      "@softonix/eslint-config-vue"
+    ]
+  ],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

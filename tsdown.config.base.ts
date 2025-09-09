@@ -5,5 +5,5 @@ export const baseTsdownConfig: UserConfig = {
   platform: 'node',
   dts: true,
   clean: true,
-  minify: false
+  minify: true
 }

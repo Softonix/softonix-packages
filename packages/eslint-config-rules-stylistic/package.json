@@ -1,6 +1,6 @@
 {
   "name": "@softonix/eslint-config-rules-stylistic",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Stylistic ESLint rules for Softonix packages",
   "type": "module",
   "license": "MIT",

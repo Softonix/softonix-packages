@@ -2,6 +2,8 @@ import Components from 'unplugin-vue-components/vite'
 import { TMappedOptions, resolveExtendOverride } from '../utils'
 import { IconsResolverCustom } from './vite.config.icons'
 
+export * as Resolvers from 'unplugin-vue-components/resolvers'
+
 export type TComponentsOptions = NonNullable<Parameters<typeof Components>[0]>
 
 /* CONFIGURATION FOR COMPONENTS AUTO-IMPORT */

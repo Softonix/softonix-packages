@@ -4,6 +4,8 @@ import { ImportsBuilder, type TScriptsOptions } from './plugins/vite.config.impo
 import { IconsBuilder } from './plugins/vite.config.icons'
 import type { TMappedOptions } from './utils'
 
+export { Resolvers } from './plugins/vite.config.components'
+
 interface IAutoImportPluginOptions {
   components?: TMappedOptions<TComponentsOptions> & {
     enabled?: boolean

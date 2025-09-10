@@ -1,5 +1,15 @@
 # @softonix/eslint-config-vue
 
+## 0.1.2
+
+### Patch Changes
+
+- f4d3264: Updated README files
+- Updated dependencies [f4d3264]
+  - @softonix/eslint-config-rules-typescript@0.1.2
+  - @softonix/eslint-config-rules-stylistic@0.1.2
+  - @softonix/eslint-config-rules-base@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

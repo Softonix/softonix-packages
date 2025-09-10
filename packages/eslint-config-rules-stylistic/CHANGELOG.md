@@ -1,5 +1,11 @@
 # @softonix/eslint-config-rules-stylistic
 
+## 0.1.2
+
+### Patch Changes
+
+- f4d3264: Updated README files
+
 ## 0.1.1
 
 ### Patch Changes

@@ -9,6 +9,9 @@
       "@softonix/eslint-config-rules-stylistic",
       "@softonix/eslint-config-rules-typescript",
       "@softonix/eslint-config-vue"
+    ],
+    [
+      "@softonix/vite-plugin-auto-imports-vue"
     ]
   ],
   "access": "public",

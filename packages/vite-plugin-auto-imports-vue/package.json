@@ -1,0 +1,47 @@
+{
+  "name": "@softonix/vite-plugin-auto-imports-vue",
+  "version": "0.0.0",
+  "description": "Softonix Vite plugin for auto-imports",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/softonix/softonix-packages/tree/main/packages/vite-plugin-auto-imports-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Softonix/softonix-packages.git",
+    "directory": "packages/vite-plugin-auto-imports-vue"
+  },
+  "author": "Softonix LLC",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint --fix --cache --max-warnings 0 .",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "radash": "catalog:dev",
+    "unplugin-auto-import": "catalog:dev",
+    "unplugin-icons": "catalog:dev",
+    "unplugin-vue-components": "catalog:dev"
+  },
+  "peerDependencies": {
+    "vite": "catalog:dev"
+  }
+}

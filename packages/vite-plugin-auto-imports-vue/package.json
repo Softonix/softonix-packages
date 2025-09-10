@@ -42,6 +42,7 @@
     "unplugin-vue-components": "catalog:dev"
   },
   "peerDependencies": {
-    "vite": "catalog:dev"
+    "vite": "catalog:dev",
+    "vue": "catalog:dev"
   }
 }

@@ -9,7 +9,11 @@ export const IconsBuilder = async () => Icons({
   }
 })
 
-export const IconsResolverCustom = () => IconsResolver({
-  prefix: '',
-  customCollections: ['icon']
-})
+export const IconsResolverCustom = (prefix = 'stx') => {
+  if (!prefix) throw new Error('Prefix is required')
+
+  return IconsResolver({
+    prefix,
+    customCollections: ['icon']
+  })
+}

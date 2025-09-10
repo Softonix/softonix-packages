@@ -15,7 +15,7 @@ export const ComponentsBuilder = (options?: TMappedOptions<TComponentsOptions> &
       './src/views/**/components/**/*.vue'
     ],
     resolvers: [
-      ...(options?.withIcons ? [IconsResolverCustom()] : [])
+      ...(options?.withIcons !== false ? [IconsResolverCustom()] : [])
     ]
   }
 

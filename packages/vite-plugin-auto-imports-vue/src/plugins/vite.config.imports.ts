@@ -23,10 +23,7 @@ export const ImportsBuilder = (options?: TMappedOptions<TScriptsOptions>) => {
     },
 
     imports: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      'pinia'
+      'vue'
     ],
 
     resolvers: []

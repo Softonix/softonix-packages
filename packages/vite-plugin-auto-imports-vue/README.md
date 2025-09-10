@@ -6,9 +6,10 @@ A unified Vite plugin that combines auto-imports for scripts, components, and ic
 
 - 🚀 **Auto-import scripts**: Composables, stores, services, and utilities
 - 🧩 **Auto-import components**: Vue components with glob patterns  
-- 🎨 **Auto-import icons**: File system icons with custom collections
+- 🎨 **Auto-import icons**: File system icons with configurable prefix
 - ⚙️ **Extend by default**: Configuration extends defaults, use `override` key when needed
 - 📦 **All-in-one**: Single plugin replaces multiple unplugin packages
+- 🔧 **Resolver exports**: Access to all unplugin-vue-components resolvers
 
 ## Installation
 
@@ -18,6 +19,11 @@ npm install @softonix/vite-plugin-auto-imports-vue
 pnpm add @softonix/vite-plugin-auto-imports-vue
 ```
 
+## Peer Dependencies
+
+- `vite`
+- `vue`
+
 ## Quick Start
 
 ```ts
@@ -26,6 +32,7 @@ import { SoftonixAutoImportsVue } from '@softonix/vite-plugin-auto-imports-vue'
 
 export default defineConfig({
   plugins: [
+    vue(),
     SoftonixAutoImportsVue()
   ]
 })
@@ -45,6 +52,9 @@ SoftonixAutoImportsVue({
   },
   components: {
     globs: ['./src/widgets/**/*.vue'] // Extends default component globs
+  },
+  icons: {
+    prefix: 'Icon' // Custom prefix (default: 'stx')
   }
 })
 ```
@@ -85,9 +95,6 @@ SoftonixAutoImportsVue({
   - `./src/**/composables`
 - **Imports**:
   - `vue`
-  - `vue-router`
-  - `@vueuse/core`
-  - `pinia`
 - **Output**: `./dts/auto-imports.d.ts`
 
 ### Components
@@ -100,6 +107,7 @@ SoftonixAutoImportsVue({
 ### Icons
 - **Compiler**: Vue 3
 - **Collections**: File system loader from `./src/assets/icons`
+- **Prefix**: Required, default is `'stx'` (use `<stx-icon-home />` or `<StxIconHome />`)
 
 ## TypeScript Support
 

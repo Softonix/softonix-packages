@@ -15,6 +15,7 @@ interface IAutoImportPluginOptions {
   }
   icons?: {
     enabled?: boolean
+    prefix?: string
   }
 }
 
@@ -33,7 +34,8 @@ export function SoftonixAutoImportsVue (options: IAutoImportPluginOptions = {}):
   if (componentsEnabled) {
     pluginOptions.push(ComponentsBuilder({
       ...options.components,
-      withIcons: options.icons?.enabled !== false
+      withIcons: options.icons?.enabled !== false,
+      iconsPrefix: options.icons?.prefix
     }))
   }
 

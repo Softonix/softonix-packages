@@ -1,5 +1,11 @@
 # @softonix/vite-plugin-auto-imports-vue
 
+## 0.1.2
+
+### Patch Changes
+
+- 8bbeaec: Fixed icons resolver
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@softonix/vite-plugin-auto-imports-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Softonix Vite plugin for auto-imports",
   "type": "module",
   "license": "MIT",

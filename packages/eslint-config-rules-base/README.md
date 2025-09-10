@@ -1,72 +1,59 @@
 # @softonix/eslint-config-rules-base
 
-Base ESLint flat configuration rules for JavaScript/TypeScript projects.
+Base ESLint rules for Softonix projects, providing core JavaScript/TypeScript linting rules.
 
 ## Installation
 
 ```bash
-pnpm add -D @softonix/eslint-config-rules-base
+npm install @softonix/eslint-config-rules-base
+# or
+yarn add @softonix/eslint-config-rules-base
+# or
+pnpm add @softonix/eslint-config-rules-base
 ```
+
+## Peer Dependencies
+
+This package requires:
+- `eslint`
 
 ## Usage
 
-### With ESLint Flat Config
-
-```javascript
-// eslint.config.js
+```js
+// eslint.config.js/ts
 import { createBaseRules } from '@softonix/eslint-config-rules-base'
 
 export default [
-  createBaseRules(),
-  // ... your other configs
+  createBaseRules()
 ]
 ```
 
-### With TypeScript
+## Included Rules
 
-```typescript
-// eslint.config.ts
-import { createBaseRules } from '@softonix/eslint-config-rules-base'
-import type { Linter } from 'eslint'
+This configuration provides core ESLint rules including:
 
-export default [
-  createBaseRules(),
-  // ... your other configs
-] satisfies Linter.Config[]
-```
+- **Line Length**: Maximum 120 characters with smart ignores for URLs, strings, and templates
+- **Escape Handling**: Disabled `no-useless-escape` for flexibility
+- **Object Safety**: Disabled `no-prototype-builtins` for object property access
+- **Array Callbacks**: Disabled `array-callback-return` requirement
+- **Empty Blocks**: Allow empty catch blocks with `allowEmptyCatch: true`
+- **Undefined Variables**: Disabled `no-undef` (handled by TypeScript)
 
-## What's Included
+## Rule Set Name
 
-This configuration provides foundational ESLint rules for:
+When used in configurations, this rule set is identified as `softonix-rules/base`.
 
-- **Code Quality** - Prevents common JavaScript/TypeScript pitfalls
-- **Best Practices** - Enforces modern JavaScript patterns  
-- **Error Prevention** - Catches potential runtime errors
-- **Consistency** - Maintains consistent code style across projects
+## Override Example
 
-## Rule Categories
-
-- Variable declarations and scoping
-- Function definitions and calls
-- Object and array handling
-- Control flow statements
-- Modern ES6+ syntax usage
-- Common anti-patterns prevention
-
-## Extending the Config
-
-You can extend or override rules:
-
-```javascript
+```js
 import { createBaseRules } from '@softonix/eslint-config-rules-base'
 
 export default [
   createBaseRules(),
   {
+    name: 'custom-overrides',
     rules: {
-      // Override any base rules
-      'no-console': 'warn',
-      'no-debugger': 'error'
+      'max-len': ['error', { code: 100 }] // Override line length
     }
   }
 ]

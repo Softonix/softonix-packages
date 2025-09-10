@@ -1,86 +1,61 @@
 # @softonix/eslint-config-rules-stylistic
 
-Stylistic ESLint flat configuration rules for consistent code formatting and style.
+Stylistic ESLint rules for Softonix projects, providing consistent code formatting and style rules.
 
 ## Installation
 
 ```bash
-pnpm add -D @softonix/eslint-config-rules-stylistic
+npm install @softonix/eslint-config-rules-stylistic
+# or
+yarn add @softonix/eslint-config-rules-stylistic
+# or
+pnpm add @softonix/eslint-config-rules-stylistic
 ```
+
+## Peer Dependencies
+
+This package requires:
+- `@stylistic/eslint-plugin`
+- `eslint`
 
 ## Usage
 
-### With ESLint Flat Config
-
-```javascript
-// eslint.config.js
+```js
+// eslint.config.js/ts
 import { createStylisticRules } from '@softonix/eslint-config-rules-stylistic'
 
 export default [
-  createStylisticRules(),
-  // ... your other configs
+  createStylisticRules()
 ]
 ```
 
-### With TypeScript
+## Included Rules
 
-```typescript
-// eslint.config.ts
-import { createStylisticRules } from '@softonix/eslint-config-rules-stylistic'
-import type { Linter } from 'eslint'
+This configuration provides stylistic rules including:
 
-export default [
-  createStylisticRules(),
-  // ... your other configs
-] satisfies Linter.Config[]
-```
+- **Indentation**: 2 spaces with switch case indenting
+- **Quotes**: Single quotes with escape avoidance
+- **Semicolons**: No semicolons (ASI)
+- **Spacing**: Consistent spacing around operators, brackets, and keywords
+- **Line Breaks**: Unix line endings with proper newline handling
+- **Brackets**: 1TBS brace style with object spacing
+- **Commas**: No trailing commas, proper spacing
+- **Type Annotations**: TypeScript-specific spacing rules
 
-### Combined with Base Config
+## Rule Set Name
 
-```typescript
-// eslint.config.ts
-import { createBaseRules } from '@softonix/eslint-config-rules-base'
-import { createStylisticRules } from '@softonix/eslint-config-rules-stylistic'
+When used in configurations, this rule set is identified as `softonix-rules/stylistic`.
 
-export default [
-  createBaseRules(),
-  createStylisticRules(),
-  // ... your other configs
-]
-```
+## Override Example
 
-## What's Included
-
-This configuration provides stylistic rules for:
-
-- **Code Formatting** - Consistent spacing, indentation, and line breaks
-- **Bracket Style** - Standardized bracket placement and spacing
-- **Quotes & Punctuation** - Consistent quote style and semicolon usage
-- **Object & Array Style** - Formatting for object literals and arrays
-- **Function Style** - Arrow functions, parameters, and return statements
-- **Import/Export Style** - Consistent module declaration formatting
-
-## Rule Categories
-
-- **Spacing** - Indentation, padding, and whitespace rules
-- **Brackets** - Brace style and bracket spacing
-- **Punctuation** - Semicolons, commas, and quotes
-- **Line Breaks** - Where to break lines for readability
-- **Naming** - Variable and function naming conventions
-- **Organization** - Code structure and ordering
-
-## Extending the Config
-
-You can extend or override stylistic rules:
-
-```javascript
+```js
 import { createStylisticRules } from '@softonix/eslint-config-rules-stylistic'
 
 export default [
   createStylisticRules(),
   {
+    name: 'custom-overrides',
     rules: {
-      // Override any stylistic rules
       '@stylistic/indent': ['error', 4], // Use 4 spaces instead of 2
       '@stylistic/quotes': ['error', 'double'] // Use double quotes
     }
@@ -91,10 +66,6 @@ export default [
 ## File Targets
 
 Applies to: `**/*.{js,ts,mts,tsx,vue}`
-
-## Dependencies
-
-This package uses [@stylistic/eslint-plugin](https://eslint.style/) for modern, maintainable stylistic rules.
 
 ## License
 

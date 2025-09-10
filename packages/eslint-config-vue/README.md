@@ -17,7 +17,7 @@ pnpm add @softonix/eslint-config-vue
 ### Basic Usage
 
 ```js
-// eslint.config.js
+// eslint.config.js/ts
 import { defineSoftonixEslintConfig } from '@softonix/eslint-config-vue'
 
 export default defineSoftonixEslintConfig()
@@ -26,16 +26,13 @@ export default defineSoftonixEslintConfig()
 ### With Options
 
 ```js
-// eslint.config.js
+// eslint.config.js/ts
 import { defineSoftonixEslintConfig } from '@softonix/eslint-config-vue'
+import eslintAutoImport from './.eslintrc-auto-import.json'
 
 export default defineSoftonixEslintConfig({
   // Auto-imports configuration for global variables
-  autoImports: {
-    globals: {
-      // Your global variables here
-    }
-  },
+  autoImports: eslintAutoImport,
   
   // Custom ignore patterns
   ignores: {
@@ -57,12 +54,6 @@ export default defineSoftonixEslintConfig()
     // Add your custom rules here
     rules: {
       'custom-rule': 'error'
-    }
-  })
-  .override('rules/vue', {
-    // Override Vue-specific rules
-    rules: {
-      'vue/component-name-in-template-casing': 'off'
     }
   })
 ```

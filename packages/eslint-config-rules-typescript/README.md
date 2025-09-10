@@ -1,91 +1,69 @@
 # @softonix/eslint-config-rules-typescript
 
-TypeScript-specific ESLint flat configuration rules for type-safe development.
+TypeScript ESLint rules for Softonix projects, providing TypeScript-specific linting configurations.
 
 ## Installation
 
 ```bash
-pnpm add -D @softonix/eslint-config-rules-typescript
+npm install @softonix/eslint-config-rules-typescript
+# or
+yarn add @softonix/eslint-config-rules-typescript
+# or
+pnpm add @softonix/eslint-config-rules-typescript
 ```
+
+## Peer Dependencies
+
+This package requires:
+- `eslint`
+- `typescript-eslint`
 
 ## Usage
 
-### With ESLint Flat Config
-
-```javascript
-// eslint.config.js
+```js
+// eslint.config.js/ts
 import { createTsRules } from '@softonix/eslint-config-rules-typescript'
 
 export default [
-  createTsRules(),
-  // ... your other configs
+  createTsRules()
 ]
 ```
 
-### With TypeScript
+## Included Rules
 
-```typescript
-// eslint.config.ts
-import { createTsRules } from '@softonix/eslint-config-rules-typescript'
-import type { Linter } from 'eslint'
+This configuration provides TypeScript-specific rules including:
 
-export default [
-  createTsRules(),
-  // ... your other configs
-] satisfies Linter.Config[]
-```
+- **Type Safety**: Disabled unsafe function types for flexibility
+- **Unused Variables**: Error on unused vars with rest siblings ignore
+- **Type Assertions**: Disabled unnecessary type assertions
+- **Array Types**: Allow both `T[]` and `Array<T>` syntax
+- **Promises**: Disabled floating promises requirement
+- **Function Types**: Allow various empty function patterns
+- **Any Type**: Disabled explicit any restriction
+- **Naming Conventions**: Enforces prefixes for interfaces (I), types (T), and enums (E)
 
-### Complete Setup with Base and Stylistic
+## Naming Convention Rules
 
-```typescript
-// eslint.config.ts
-import { createBaseRules } from '@softonix/eslint-config-rules-base'
-import { createStylisticRules } from '@softonix/eslint-config-rules-stylistic'
-import { createTsRules } from '@softonix/eslint-config-rules-typescript'
+- **Interfaces**: Must start with `I` (e.g., `IUser`, `IApiResponse`)
+- **Type Aliases**: Must start with `T` (e.g., `TStatus`, `TConfig`)
+- **Enums**: Must start with `E` (e.g., `EColor`, `EUserRole`)
 
-export default [
-  createBaseRules(),
-  createStylisticRules(),
-  createTsRules(),
-  // ... your other configs
-]
-```
+## Rule Set Name
 
-## What's Included
+When used in configurations, this rule set is identified as `softonix-rules/typescript`.
 
-This configuration provides TypeScript-specific rules for:
+## Override Example
 
-- **Type Safety** - Enforce proper TypeScript usage and type checking
-- **Interface & Type Definitions** - Best practices for type declarations
-- **Generic Usage** - Proper generic constraints and usage patterns
-- **Function Signatures** - Type-safe function definitions and calls
-- **Class Definitions** - TypeScript class best practices
-- **Module System** - Import/export with proper typing
-
-## Rule Categories
-
-- **Type Checking** - Rules that require type information
-- **Type Assertions** - Safe type casting and assertions
-- **Interface Design** - Clean interface and type definitions
-- **Generic Constraints** - Proper generic usage
-- **Function Typing** - Return types and parameter typing
-- **Class Members** - Access modifiers and member definitions
-- **Naming Conventions** - TypeScript-specific naming patterns
-
-## Extending the Config
-
-You can extend or override TypeScript rules:
-
-```javascript
+```js
 import { createTsRules } from '@softonix/eslint-config-rules-typescript'
 
 export default [
   createTsRules(),
   {
+    name: 'custom-overrides',
     rules: {
-      // Override any TypeScript rules
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/no-unused-vars': 'warn'
+      '@typescript-eslint/no-explicit-any': 'error', // Disallow any type
+      '@typescript-eslint/explicit-module-boundary-types': 'error' // Require return types
     }
   }
 ]
@@ -94,15 +72,6 @@ export default [
 ## File Targets
 
 Applies to: `**/*.{js,ts,mts,tsx,vue}`
-
-## Dependencies
-
-This package uses [@typescript-eslint](https://typescript-eslint.io/) for comprehensive TypeScript linting support.
-
-## Prerequisites
-
-- TypeScript compiler (`typescript`)
-- ESLint with TypeScript parser support
 
 ## License
 
